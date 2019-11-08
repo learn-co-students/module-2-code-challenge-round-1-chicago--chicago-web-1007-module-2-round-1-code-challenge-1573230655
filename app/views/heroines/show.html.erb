@@ -1,0 +1,13 @@
+<h1>Heroine's name:</h1>
+<p><%= @heroine.name%></p>
+
+<h1>Heroine's super name:</h1>
+<p><%= @heroine.super_name%></p>
+
+
+<h2>The Heroine's power: </h2>
+<%= link_to @heroine.power.name, power_path(@heroine.power)%>
+<br>
+
+<%= button_to "Edit a Heroine", edit_heroine_path , method: :get %>
+
