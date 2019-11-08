@@ -1,5 +1,4 @@
 class HeroinesController < ApplicationController
-  # before_action :set_heroine, only: [:show]
   def index
     @heroines = Heroine.all
   end
@@ -27,15 +26,14 @@ class HeroinesController < ApplicationController
 
   def update
     @heroine = Heroine.find(params[:id])
-    @heroine.update(heroine_params)
-    redirect_to @heroine
+    if @heroine.update(heroine_params)
+      redirect_to @heroine
+    else
+      redirect_to edit_heroine_path
+    end
   end
 
   private
-
-  # def set_heroine
-  #   @heroine = Heroine.find(params[:id])
-  # end
 
   def heroine_params
     params.require(:heroine).permit(:name, :super_name, :power_id)
