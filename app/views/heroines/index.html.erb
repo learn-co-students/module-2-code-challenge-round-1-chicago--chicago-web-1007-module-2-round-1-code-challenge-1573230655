@@ -1,9 +1,16 @@
 <h2>All Heroines</h2>
+<%# <%= form_with(model: @heroine, url: '/search', method: :get) do %>
+  <%# <%= label_tag(:power, "Search By Superpower:") %> 
+  <%# <%= search_field(:heroine, :power) %> 
+  <%# <%= submit_tag("Search") %> 
+<%# <% end %> 
+<%# Got a start on the search/filter form, needs route and controller method to work %>
+
 
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%= link_to heroine.super_name, heroine %>
     </li>
     <br>
   <% end %>

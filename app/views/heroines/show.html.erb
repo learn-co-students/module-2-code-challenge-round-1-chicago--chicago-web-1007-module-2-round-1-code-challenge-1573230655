@@ -1,0 +1,5 @@
+<h1><%= @heroine.name %></h1>
+Super Name: <%= @heroine.super_name %><br>
+Power: <%= link_to @heroine.power.name.capitalize, @heroine.power %>
+<br>
+<%= button_to "Edit", edit_heroine_path, method: :get %><br>
