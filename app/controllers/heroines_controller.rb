@@ -10,6 +10,12 @@ class HeroinesController < ApplicationController
     @heroine = Heroine.new
   end
 
+  def search
+    @power = Power.find_by(name: params[:q])
+    @heroines = Heroine.all.select{|h| h.power==@power}
+    render :index
+  end
+
   def create
     @heroine = Heroine.new(heroine_params)
     if @heroine.save
