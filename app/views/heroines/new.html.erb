@@ -1,0 +1,16 @@
+<h1>Create new heroine</h1>
+
+ <%= form_with model: Heroine.new do |f|%>
+    <%= f.label :name, " Name" %>
+    <%= f.text_field :name %>
+    <%= f.label :super_name, "Super Name" %>
+    <%= f.text_field :super_name %>
+    <%= f.label :porew, "Powers" %>
+    <select name="heroine[power]" id="">
+        <option value="Super Strenght"> strenght power</option>
+        <option value="flight">flight power</option>
+        <option value="super human senses"> human senses power</option>
+        <option value="elasticity">elasticity power</option>
+    </select>
+    <%= f.submit %>
+    <% end %>

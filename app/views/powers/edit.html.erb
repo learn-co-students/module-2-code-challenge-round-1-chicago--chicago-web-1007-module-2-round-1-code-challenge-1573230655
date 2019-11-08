@@ -1,0 +1,19 @@
+<h1>Edit Power</h1>
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <p><%= error %></p>
+  <% end %>
+  <% end %>
+
+<%= form_for(@power) do |f|%>
+<%= f.label :name, "Name" %>
+<%= f.text_field :description %>
+<%= f.label :description, "Description" %>
+<%= f.text_field :description %>
+
+<%= f.submit "Edit this Power"%>
+<% end %>
+
+<%= form_with model: @power, method: "delete" do |f| %>
+<%= f.submit "Delete this power" %>
+<% end %>
